@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LuckZero | Driven by Logic, Not Luck</title>
+<meta name="description" content="LuckZero - Next level IT company. Websites, web apps, automation and custom software driven by logic, not luck.">
+<link rel="icon" href="image/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div id="loader">
+  <div class="loader-grid"></div>
+  <div class="loader-core">
+    <div class="loader-ring r1"></div>
+    <div class="loader-ring r2"></div>
+    <div class="loader-ring r3"></div>
+    <img src="image/logo.png" alt="LuckZero" class="loader-logo">
+  </div>
+  <div class="loader-text glitch" data-text="LUCKZERO">LUCKZERO</div>
+  <div class="loader-bar"><span id="loaderBar"></span></div>
+  <div class="loader-log" id="loaderLog"></div>
+  <div class="loader-percent"><span id="loaderPercent">0</span>%</div>
+</div>
+
+<!-- CURSOR -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing">
+  <span class="c-tl"></span><span class="c-tr"></span><span class="c-bl"></span><span class="c-br"></span>
+</div>
+<div class="cursor-hud" id="cursorHud">X:0000 Y:0000</div>
+
+<canvas id="bgCanvas"></canvas>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="scanlines"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#home" class="brand">
+    <img src="image/logo.png" alt="LuckZero logo">
+    <span>LUCK<b>ZERO</b></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="menu-toggle" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="badge reveal"><i class="fas fa-terminal"></i> NEXT LEVEL IT COMPANY</div>
+    <h1 class="reveal">
+      <span class="glitch" data-text="DRIVEN BY LOGIC,">DRIVEN BY LOGIC,</span>
+      <span class="grad">NOT LUCK<span class="caret"></span></span>
+    </h1>
+    <p class="hero-sub reveal">We build <span id="typed" class="typed"></span> engineered with precision. No guesswork. No gambling. Just systems that work.</p>
+    <div class="hero-btns reveal">
+      <a href="#contact" class="btn btn-primary magnetic"><span>Start Your Project</span><i class="fas fa-arrow-right"></i></a>
+      <a href="#services" class="btn btn-ghost magnetic"><span>Explore Services</span></a>
+    </div>
+    <div class="hero-code reveal">
+      <div class="code-head"><i></i><i></i><i></i><span>luckzero.js</span></div>
+      <pre id="codeBlock"></pre>
+    </div>
+  </div>
+  <a href="#services" class="scroll-hint"><span></span></a>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>HTML</span><span>CSS</span><span>JAVASCRIPT</span><span>NODE.JS</span><span>n8n AUTOMATION</span><span>APIs</span><span>CLOUD</span><span>SECURITY</span><span>UI / UX</span><span>DATABASES</span>
+    <span>HTML</span><span>CSS</span><span>JAVASCRIPT</span><span>NODE.JS</span><span>n8n AUTOMATION</span><span>APIs</span><span>CLOUD</span><span>SECURITY</span><span>UI / UX</span><span>DATABASES</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="sec-head reveal">
+    <div class="tag">// WHAT WE DO</div>
+    <h2>Our <span class="grad">Services</span></h2>
+    <p>Everything your business needs to run smarter, faster and without luck.</p>
+  </div>
+  <div class="cards">
+    <article class="card tilt reveal">
+      <div class="card-icon"><i class="fas fa-globe"></i></div>
+      <h3>Website Development</h3>
+      <p>Fast, responsive, SEO-ready websites that turn visitors into customers.</p>
+      <ul><li>Modern responsive design</li><li>SEO optimized</li><li>Speed focused</li></ul>
+    </article>
+    <article class="card tilt reveal">
+      <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
+      <h3>Web Applications</h3>
+      <p>Custom dashboards, portals and platforms built around your workflow.</p>
+      <ul><li>Secure authentication</li><li>Real-time features</li><li>Scalable architecture</li></ul>
+    </article>
+    <article class="card tilt reveal">
+      <div class="card-icon"><i class="fas fa-robot"></i></div>
+      <h3>n8n Automation</h3>
+      <p>Connect your tools and automate repetitive work, around the clock.</p>
+      <ul><li>Workflow automation</li><li>API integrations</li><li>Custom triggers</li></ul>
+    </article>
+    <article class="card tilt reveal">
+      <div class="card-icon"><i class="fas fa-plug"></i></div>
+      <h3>API & Integrations</h3>
+      <p>Link payments, CRMs, messaging and data sources into one smooth system.</p>
+      <ul><li>REST & webhooks</li><li>Third-party services</li><li>Data syncing</li></ul>
+    </article>
+    <article class="card tilt reveal">
+      <div class="card-icon"><i class="fas fa-pen-ruler"></i></div>
+      <h3>UI / UX Design</h3>
+      <p>Interfaces that look sharp and feel effortless on every device.</p>
+      <ul><li>Brand-aligned design</li><li>Interactive prototypes</li><li>Motion & animation</li></ul>
+    </article>
+    <article class="card tilt reveal">
+      <div class="card-icon"><i class="fas fa-shield-halved"></i></div>
+      <h3>Maintenance & Support</h3>
+      <p>Hosting, updates, backups and monitoring so your systems stay healthy.</p>
+      <ul><li>Performance monitoring</li><li>Security updates</li><li>Fast fixes</li></ul>
+    </article>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="sec-head reveal">
+    <div class="tag">// HOW WE WORK</div>
+    <h2>Logic <span class="grad">Process</span></h2>
+    <p>Every project follows a clear, predictable path from idea to launch.</p>
+  </div>
+  <div class="timeline">
+    <div class="step reveal"><div class="num">01</div><h4>Analyze</h4><p>We study your goals, users and constraints before writing a single line.</p></div>
+    <div class="step reveal"><div class="num">02</div><h4>Design</h4><p>Wireframes and visuals that map the logic of the experience.</p></div>
+    <div class="step reveal"><div class="num">03</div><h4>Build</h4><p>Clean, tested code and automation built to scale.</p></div>
+    <div class="step reveal"><div class="num">04</div><h4>Launch & Grow</h4><p>Deploy, monitor and keep improving with real data.</p></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <div class="tag">// WHO WE ARE</div>
+      <h2>Zero <span class="grad">Luck.</span><br>Total Logic.</h2>
+      <p>LuckZero is a next-level IT company built on one belief: great results come from sound engineering, not chance. We combine clean code, smart automation and sharp design to give businesses technology they can rely on.</p>
+      <p>From a first website to complex automated systems, every decision we make is measured, tested and reasoned.</p>
+      <div class="pillars">
+        <div class="pillar"><i class="fas fa-brain"></i><span>Logic First</span></div>
+        <div class="pillar"><i class="fas fa-bolt"></i><span>High Performance</span></div>
+        <div class="pillar"><i class="fas fa-lock"></i><span>Secure by Design</span></div>
+        <div class="pillar"><i class="fas fa-infinity"></i><span>Built to Scale</span></div>
+      </div>
+    </div>
+    <div class="about-visual reveal">
+      <canvas id="netCanvas"></canvas>
+      <div class="core"><img src="image/logo.png" alt="LuckZero"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="sec-head reveal">
+    <div class="tag">// GET IN TOUCH</div>
+    <h2>Start Your <span class="grad">Project</span></h2>
+    <p>Fill the form and your message goes straight to our WhatsApp.</p>
+  </div>
+  <div class="contact-wrap reveal">
+    <form id="contactForm" class="form" novalidate>
+      <div class="row">
+        <div class="field"><input type="text" id="name" placeholder=" " required><label for="name">Your Name</label><span class="line"></span></div>
+        <div class="field"><input type="tel" id="phone" placeholder=" " required><label for="phone">Phone / Email</label><span class="line"></span></div>
+      </div>
+      <div class="field">
+        <select id="service" required>
+          <option value="Website Development">Website Development</option>
+          <option value="Web Application">Web Application</option>
+          <option value="n8n Automation">n8n Automation</option>
+          <option value="API & Integrations">API & Integrations</option>
+          <option value="UI / UX Design">UI / UX Design</option>
+          <option value="Other">Other</option>
+        </select>
+        <label class="static">Service</label><span class="line"></span>
+      </div>
+      <div class="field"><textarea id="message" rows="5" placeholder=" " required></textarea><label for="message">Tell us about your project...</label><span class="line"></span></div>
+      <button type="submit" class="btn btn-primary magnetic"><span><i class="fab fa-whatsapp"></i> Send via WhatsApp</span></button>
+      <p class="form-note" id="formNote"></p>
+    </form>
+    <div class="contact-info">
+      <div class="info"><i class="fab fa-whatsapp"></i><div><small>WhatsApp / Call</small><a href="tel:+94720123910">072 012 3910</a></div></div>
+      <div class="info"><i class="fas fa-globe"></i><div><small>Website</small><a href="https://luckzero.com">luckzero.com</a></div></div>
+      <div class="info"><i class="fas fa-clock"></i><div><small>Response</small><span>Fast. We reply quickly.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot">
+    <a href="#home" class="brand"><img src="image/logo.png" alt="LuckZero"><span>LUCK<b>ZERO</b></span></a>
+    <p class="tagline">Driven by logic, not luck.</p>
+    <p class="copy">&copy; <span id="year"></span> LuckZero. All rights reserved.</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top">
+  <svg viewBox="0 0 48 48"><circle class="bg" cx="24" cy="24" r="21"/><circle class="fg" id="toTopRing" cx="24" cy="24" r="21"/></svg>
+  <i class="fas fa-arrow-up"></i>
+</button>
+<div class="toast" id="toast"></div>
+<script src="js/main.js"></script>
+</body>
+</html>
