@@ -3,10 +3,90 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LuckZero | Driven by Logic, Not Luck</title>
-<meta name="description" content="LuckZero - Next level IT company. Websites, web apps, automation and custom software driven by logic, not luck.">
-<link rel="icon" href="image/logo.png">
+<title>LuckZero | Web Development, Web Apps &amp; n8n Automation</title>
+<meta name="description" content="LuckZero is a next-level IT company building fast websites, custom web apps and n8n automation in Sri Lanka. Driven by logic, not luck.">
+<meta name="keywords" content="LuckZero, web development Sri Lanka, website design, web applications, n8n automation, workflow automation, API integration, IT company, UI UX design">
+<meta name="author" content="LuckZero">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#03060f">
+<link rel="canonical" href="https://luckzero.com/">
+<link rel="icon" type="image/png" href="image/logo.png">
+<link rel="apple-touch-icon" href="image/logo.png">
+<link rel="preload" as="image" href="image/logo.png">
+
+<!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LuckZero">
+<meta property="og:title" content="LuckZero | Driven by Logic, Not Luck">
+<meta property="og:description" content="Next-level IT company: websites, web apps and n8n automation engineered with precision.">
+<meta property="og:url" content="https://luckzero.com/">
+<meta property="og:image" content="https://luckzero.com/image/logo.png">
+<meta property="og:image:alt" content="LuckZero logo">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LuckZero | Driven by Logic, Not Luck">
+<meta name="twitter:description" content="Websites, web apps and n8n automation engineered with precision.">
+<meta name="twitter:image" content="https://luckzero.com/image/logo.png">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://luckzero.com/#org",
+      "name": "LuckZero",
+      "url": "https://luckzero.com/",
+      "logo": "https://luckzero.com/image/logo.png",
+      "slogan": "Driven by logic, not luck",
+      "telephone": "+94720123910",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+94720123910",
+        "contactType": "customer support",
+        "availableLanguage": ["English", "Sinhala"]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://luckzero.com/#website",
+      "url": "https://luckzero.com/",
+      "name": "LuckZero",
+      "publisher": { "@id": "https://luckzero.com/#org" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://luckzero.com/#service",
+      "name": "LuckZero",
+      "url": "https://luckzero.com/",
+      "image": "https://luckzero.com/image/logo.png",
+      "telephone": "+94720123910",
+      "description": "IT company offering website development, web applications, n8n automation, API integrations, UI/UX design and maintenance.",
+      "provider": { "@id": "https://luckzero.com/#org" },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "IT Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Development" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Applications" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "n8n Automation" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "API & Integrations" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "UI / UX Design" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Maintenance & Support" } }
+        ]
+      }
+    }
+  ]
+}
+</script>
+
+<noscript><style>#loader{display:none!important}body.loading{overflow:auto!important}.reveal{opacity:1!important;transform:none!important;filter:none!important}</style></noscript>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="css/style.css">
@@ -40,9 +120,9 @@
 <div class="scanlines"></div>
 
 <!-- NAV -->
-<nav id="nav">
+<nav id="nav" aria-label="Main navigation">
   <a href="#home" class="brand">
-    <img src="image/logo.png" alt="LuckZero logo">
+    <img src="image/logo.png" alt="LuckZero logo" width="42" height="42">
     <span>LUCK<b>ZERO</b></span>
   </a>
   <ul class="nav-links" id="navLinks">
@@ -217,6 +297,6 @@
   <i class="fas fa-arrow-up"></i>
 </button>
 <div class="toast" id="toast"></div>
-<script src="js/main.js"></script>
+<script src="js/main.js" defer></script>
 </body>
 </html>
