@@ -52,6 +52,7 @@
   function typeWords() {
     const words = ['websites', 'web apps', 'automations', 'smart systems'];
     const el = $('#typed');
+    if (!el) return;
     let w = 0, c = 0, del = false;
     (function tick() {
       const word = words[w];
@@ -76,6 +77,7 @@
       ['', '<span class="f">build</span>(company.logic); <span class="cm">// ✔ deployed</span>']
     ];
     const pre = $('#codeBlock');
+    if (!pre) return;
     let html = '';
     let i = 0;
     (function next() {
@@ -175,7 +177,7 @@
 
   /* ---------- NAV ---------- */
   const nav = $('#nav'), progressBar = $('#scrollProgress');
-  const links = $$('.nav-links a'), sections = links.map(a => $(a.getAttribute('href')));
+  const links = $$('.nav-links a[href^="#"]'), sections = links.map(a => $(a.getAttribute('href')));
   addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', scrollY > 40);
     const max = document.documentElement.scrollHeight - innerHeight;
@@ -233,7 +235,7 @@
     setTimeout(() => toast.classList.remove('show'), 3500);
   }
 
-  $('#contactForm').addEventListener('submit', e => {
+  $('#contactForm')?.addEventListener('submit', e => {
     e.preventDefault();
     const name = $('#name'), phone = $('#phone'), msg = $('#message'), service = $('#service');
     let ok = true;
@@ -274,7 +276,9 @@ ${msg.value.trim()}`;
 
   /* ---------- ABOUT: NETWORK AROUND LOGO ---------- */
   (function network() {
-    const box = $('.about-visual'), c = $('#netCanvas'), g = c.getContext('2d');
+    const box = $('.about-visual'), c = $('#netCanvas');
+    if (!box || !c) return;
+    const g = c.getContext('2d');
     let w, h, cx, cy, nodes = [], packets = [], visible = false;
     const COLORS = ['#00ffd5', '#0a84ff', '#a855f7'];
 
