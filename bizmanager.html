@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BizManager | Offline Order, Inventory &amp; Payment Software for Windows | LuckZero</title>
+<meta name="description" content="BizManager is 100% offline Windows software for orders, stock, bank slips and Excel reports. English &amp; Sinhala. No monthly fees. By LuckZero.">
+<meta name="keywords" content="BizManager, offline order management software, inventory software Sri Lanka, Sinhala business software, bank slip, stock control, Windows software, LuckZero">
+<meta name="author" content="LuckZero">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#03060f">
+<link rel="canonical" href="https://luckzero.com/bizmanager.html">
+<link rel="icon" type="image/png" href="image/logo.png">
+<link rel="apple-touch-icon" href="image/logo.png">
+<link rel="preload" as="image" href="image/logo.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LuckZero">
+<meta property="og:title" content="BizManager | Offline Order, Inventory & Payment Management">
+<meta property="og:description" content="Manage orders, stock, bank slips and Excel reports 100% offline in English and Sinhala. No monthly subscriptions.">
+<meta property="og:url" content="https://luckzero.com/bizmanager.html">
+<meta property="og:image" content="https://luckzero.com/image/logo.png">
+<meta property="og:image:alt" content="LuckZero logo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="BizManager | Offline Order, Inventory & Payment Management">
+<meta name="twitter:description" content="100% offline Windows software in English and Sinhala. No monthly fees.">
+<meta name="twitter:image" content="https://luckzero.com/image/logo.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "BizManager",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Windows 10, Windows 11",
+      "description": "Offline bilingual (English and Sinhala) order, inventory and payment management software for Windows. Orders, automatic stock control, bank slip attachments and Excel-ready reports with no monthly fees.",
+      "inLanguage": ["en", "si"],
+      "url": "https://luckzero.com/bizmanager.html",
+      "publisher": { "@type": "Organization", "name": "LuckZero", "url": "https://luckzero.com/" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Do I need an internet connection to use BizManager?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. BizManager works 100% offline on your Windows computer." } },
+        { "@type": "Question", "name": "Will I lose my data when updating the software?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Your database, backups, and uploaded bank slips are stored safely outside the application installation folder." } },
+        { "@type": "Question", "name": "Can my staff use it in Sinhala?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can switch the entire interface between English and Sinhala anytime, and exported Excel reports display Sinhala text properly." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;500;600;700&family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/bizmanager.css">
+<noscript><style>#loader{display:none!important}body.loading{overflow:auto!important}.reveal{opacity:1!important;transform:none!important;filter:none!important}</style></noscript>
+</head>
+<body data-lang="en">
+
+<!-- PRELOADER -->
+<div id="loader">
+  <div class="loader-grid"></div>
+  <div class="loader-core">
+    <div class="loader-ring r1"></div>
+    <div class="loader-ring r2"></div>
+    <div class="loader-ring r3"></div>
+    <img src="image/logo.png" alt="LuckZero" class="loader-logo">
+  </div>
+  <div class="loader-text glitch" data-text="BIZMANAGER">BIZMANAGER</div>
+  <div class="loader-bar"><span id="loaderBar"></span></div>
+  <div class="loader-log" id="loaderLog"></div>
+  <div class="loader-percent"><span id="loaderPercent">0</span>%</div>
+</div>
+
+<!-- CURSOR -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"><span class="c-tl"></span><span class="c-tr"></span><span class="c-bl"></span><span class="c-br"></span></div>
+<div class="cursor-hud" id="cursorHud">X:0000 Y:0000</div>
+
+<canvas id="bgCanvas"></canvas>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="scanlines"></div>
+
+<!-- NAV -->
+<nav id="nav" aria-label="Main navigation">
+  <a href="index.html" class="brand">
+    <img src="image/logo.png" alt="LuckZero logo" width="42" height="42">
+    <span>LUCK<b>ZERO</b></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#specs">Specs</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <div class="lang-switch" role="group" aria-label="Language">
+    <button type="button" class="lang-btn active" data-set-lang="en">EN</button>
+    <button type="button" class="lang-btn" data-set-lang="si">සිං</button>
+  </div>
+  <button class="menu-toggle" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="badge reveal">
+      <i class="fab fa-windows"></i>
+      <span class="en tr">Offline Bilingual Order, Inventory &amp; Payment Management for Windows</span>
+      <span class="si">Windows පරිගණක සඳහා 100% Offline ද්විභාෂා ඇණවුම්, තොග සහ ගෙවීම් පද්ධතිය</span>
+    </div>
+
+    <h1 class="bm-h1 reveal">
+      <span class="en tr">Run Your Entire Business Smoothly <span class="grad">— Without Internet or Monthly Fees.</span></span>
+      <span class="si"><span class="grad">අන්තර්ජාලය හෝ මාසික ගාස්තු නොමැතිව</span> ඔබේ සම්පූර්ණ ව්‍යාපාරයම පහසුවෙන් පාලනය කරන්න.</span>
+    </h1>
+
+    <p class="hero-sub reveal">
+      <span class="en tr">BizManager helps Sri Lankan online sellers, boutiques, custom makers, and service businesses manage orders, track product stock, attach bank transfer slips, and export Excel reports — 100% offline in both English and Sinhala.</span>
+      <span class="si">Facebook, WhatsApp, Instagram, TikTok සහ සාප්පුවට පැමිණෙන පාරිභෝගිකයින්ගේ සියලු ඇණවුම්, නිෂ්පාදන තොග (Stock), අත්තිකාරම් ගෙවීම්, බැංකු රිසිට්පත් සහ Excel වාර්තා සිංහල සහ ඉංග්‍රීසි භාෂා දෙකෙන්ම ඔබේ පරිගණකය තුළම ආරක්ෂිතව කළමනාකරණය කරන්න.</span>
+    </p>
+
+    <div class="hero-btns reveal">
+      <a href="https://wa.me/94720123910?text=Hi%20LuckZero%2C%20I%27d%20like%20to%20request%20a%20BizManager%20demo." target="_blank" rel="noopener" class="btn btn-primary magnetic">
+        <span><span class="en tr">Request a Demo / Download BizManager</span><span class="si">Demo එකක් ඉල්ලන්න / BizManager ලබාගන්න</span></span><i class="fas fa-arrow-right"></i>
+      </a>
+      <a href="#features" class="btn btn-ghost magnetic">
+        <span><span class="en tr">View Key Features</span><span class="si">ප්‍රධාන පහසුකම්</span></span>
+      </a>
+    </div>
+
+    <!-- App preview (built from the feature list) -->
+    <div class="app reveal" aria-hidden="true">
+      <div class="code-head"><i></i><i></i><i></i><span>BizManager — 127.0.0.1</span></div>
+      <div class="app-body">
+        <div class="app-top">
+          <b>BM-20261123-0001</b>
+          <span class="sample">sample order</span>
+        </div>
+        <div class="stages">
+          <div class="stage st1">Pending</div>
+          <div class="stage st2">Processing</div>
+          <div class="stage st3">Ready</div>
+          <div class="stage st4">Completed</div>
+        </div>
+        <div class="app-label">Stock status</div>
+        <div class="chips">
+          <span class="chip in">● In Stock</span>
+          <span class="chip low">● Low Stock</span>
+          <span class="chip out">● Out of Stock</span>
+        </div>
+        <div class="app-label">Sales channel</div>
+        <div class="chips">
+          <span class="chip">Facebook</span><span class="chip">WhatsApp</span><span class="chip">Instagram</span><span class="chip">TikTok</span><span class="chip">Walk-in</span><span class="chip">Phone Call</span><span class="chip">Website</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="#highlights" class="scroll-hint" aria-label="Scroll down"><span></span></a>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section id="highlights" class="tight">
+  <div class="hl-grid">
+    <div class="hl reveal"><i class="fas fa-plug-circle-xmark"></i><p><span class="en tr">100% Offline Desktop Software (Windows 10 / 11)</span><span class="si">100% Offline Windows මෘදුකාංගය (Windows 10 / 11)</span></p></div>
+    <div class="hl reveal"><i class="fas fa-language"></i><p><span class="en tr">Full English &amp; සිංහල (Sinhala) Language Switching</span><span class="si">සිංහල සහ English භාෂා දෙකෙන්ම භාවිතා කළ හැකිය</span></p></div>
+    <div class="hl reveal"><i class="fas fa-hand-holding-dollar"></i><p><span class="en tr">No Monthly Subscriptions — Data Stays Safely on Your PC</span><span class="si">මාසික ගාස්තු නැත — සියලු දත්ත ඔබේම පරිගණකයේ ආරක්ෂිතයි</span></p></div>
+    <div class="hl reveal"><i class="fas fa-file-invoice"></i><p><span class="en tr">Automated Stock Deduction &amp; Bank Slip Attachments</span><span class="si">ස්වයංක්‍රීය තොග පාලනය (Auto Stock) සහ බැංකු රිසිට්පත් (Bank Slip) ඇමිණීම</span></p></div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="sec-head reveal">
+    <div class="tag">// WHY BIZMANAGER?</div>
+    <h2>One Place for <span class="grad">Every Order</span></h2>
+  </div>
+  <div class="why-box reveal">
+    <p>Managing orders across Facebook, WhatsApp, Instagram, TikTok, and phone calls inside notebooks or spreadsheets leads to missed deliveries, stock errors, and forgotten advance payments.</p>
+    <p>BizManager brings every customer, product, payment slip, and delivery deadline into one fast, reliable local dashboard that opens directly in your browser — with zero Python or technical setup required.</p>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="sec-head reveal">
+    <div class="tag">// CORE FEATURES &amp; MODULES</div>
+    <h2><span class="en tr">Core <span class="grad">Features</span></span><span class="si">ප්‍රධාන <span class="grad">පහසුකම්</span></span></h2>
+  </div>
+
+  <div class="cards">
+    <!-- 1 -->
+    <article class="card tilt reveal">
+      <div class="card-icon"><i class="fas fa-boxes-stacked"></i></div>
+      <h3><span class="en tr">Products Catalog &amp; Automatic Stock Control</span><span class="si">නිෂ්පාදන නාමාවලිය සහ ස්වයංක්‍රීය තොග පාලනය (Products &amp; Stock)</span></h3>
+      <ul class="en tr">
+        <li>Maintain a dedicated product catalog with SKU, item name, description, unit price (LKR), stock quantity, and low-stock alert levels.</li>
+        <li>Visual stock status at a glance: In Stock, Low Stock, and Out of Stock.</li>
+        <li>Stock deducts automatically when an order is created and restores automatically if items are edited, cancelled, or deleted.</li>
+        <li>Perform quick manual stock adjustments with audit logs for restocks, returns, or damages.</li>
+      </ul>
+      <ul class="si">
+        <li>SKU කේතය, නම, විස්තරය, මිල (LKR), තොග ප්‍රමාණය සහ අඩු තොග සීමාව සමඟ නිෂ්පාදන එක් කරන්න.</li>
+        <li>තොග ඇත (In Stock), තොග අඩුයි (Low Stock) සහ තොග අවසන් (Out of Stock) ලෙස සජීවීව පෙන්වයි.</li>
+        <li>ඇණවුමක් දැමූ විට තොගයෙන් ස්වයංක්‍රීයව අඩු වන අතර ඇණවුමක් අවලංගු (Cancel) කළහොත් තොගය නැවත නිවැරදිව එකතු වේ.</li>
+      </ul>
+    </article>
+
+    <!-- 2 -->
+    <article class="card tilt reveal">
+      <div class="card-icon"><i class="fas fa-cart-shopping"></i></div>
+      <h3><span class="en tr">Complete Order &amp; Sales Channel Management</span><span class="si">සම්පූර්ණ ඇණවුම් සහ විකුණුම් මාධ්‍ය කළමනාකරණය (Orders &amp; Sales Channels)</span></h3>
+      <ul class="en tr">
+        <li>Capture all customer details directly during order entry: Name, Primary Phone, 2nd Phone Number, and Delivery Address.</li>
+        <li>Record where each sale came from: Facebook, WhatsApp, Instagram, TikTok, Walk-in, Phone Call, Website, or a custom channel.</li>
+        <li>Auto-generate unique sequential order numbers (BM-YYYYMMDD-0001).</li>
+        <li>Track orders through clear stages: Pending → Processing → Ready → Completed (or Cancelled).</li>
+        <li>Search orders instantly by order number, customer name, primary/secondary phone, sales channel, or item name.</li>
+      </ul>
+      <ul class="si">
+        <li>ඇණවුම ඇතුළත් කරන විටම පාරිභෝගික නම, ප්‍රධාන දුරකථන අංකය, දෙවන දුරකථන අංකය සහ ලිපිනය සටහන් කළ හැකිය.</li>
+        <li>ඇණවුම ලැබුණු මාධ්‍යය (Facebook, WhatsApp, Instagram, TikTok, Walk-in, Phone Call, Website ආදිය) සටහන් කරන්න.</li>
+        <li>සෑම ඇණවුමකටම අනන්‍ය අංකයක් (BM-YYYYMMDD-0001) ස්වයංක්‍රීයව ලැබේ.</li>
+        <li>Pending → Processing → Ready → Completed ලෙස ඇණවුම් තත්ත්වය යාවත්කාලීන කරන්න.</li>
+      </ul>
+    </article>
+
+    <!-- 3 -->
+    <article class="card tilt reveal">
+      <div class="card-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+      <h3><span class="en tr">Advance Payments &amp; Bank Slip Uploads</span><span class="si">ගෙවීම් සහ බැංකු රිසිට්පත් (Payments &amp; Bank Slip Upload)</span></h3>
+      <ul class="en tr">
+        <li>Record Full, Advance, and Partial payments across Cash, Bank Transfer, Card, and Mobile/QR.</li>
+        <li>Upload customer bank slips (PNG, JPG, WEBP, PDF) during order creation or when recording follow-up payments, and open them anytime from Order Details.</li>
+        <li>Exact integer-cent currency calculations prevent rounding mistakes and block invalid or over-balance payments.</li>
+      </ul>
+      <ul class="si">
+        <li>සම්පූර්ණ ගෙවීම්, අත්තිකාරම් (Advance) සහ අර්ධ ගෙවීම් (Cash, Bank Transfer, Card, Mobile/QR) සටහන් කර ඉතිරි හිඟ මුදල ස්වයංක්‍රීයව ගණනය කරයි.</li>
+        <li>පාරිභෝගිකයා එවන බැංකු රිසිට්පත (PNG, JPG, WEBP, PDF) පද්ධතියට upload කර ඕනෑම වේලාවක බලාගත හැකිය.</li>
+      </ul>
+    </article>
+
+    <!-- 4 -->
+    <article class="card tilt reveal">
+      <div class="card-icon"><i class="fas fa-address-book"></i></div>
+      <h3><span class="en tr">Customer Directory &amp; History</span><span class="si">පාරිභෝගික තොරතුරු සහ ඉතිහාසය (Customer CRM)</span></h3>
+      <ul class="en tr">
+        <li>Store primary and 2nd phone numbers, delivery addresses, and customer notes.</li>
+        <li>Instantly view any customer's total order count, complete order history, and remaining unpaid balance.</li>
+      </ul>
+      <ul class="si">
+        <li>ප්‍රධාන සහ දෙවන දුරකථන අංක, ලිපින, මුළු ඇණවුම් ගණන සහ හිඟ ගෙවීම් එකම තැනකින් බලන්න.</li>
+      </ul>
+    </article>
+
+    <!-- 5 -->
+    <article class="card tilt reveal">
+      <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+      <h3><span class="en tr">Real-Time Dashboard &amp; Excel-Ready Reports</span><span class="si">ප්‍රධාන පුවරුව, වාර්තා සහ Excel Export</span></h3>
+      <ul class="en tr">
+        <li>Live KPIs: Total Orders, Pending, Processing, Ready, Completed, Total Revenue, Outstanding Payments, Today's Orders, and Upcoming 7-Day Deliveries.</li>
+        <li>Daily, Weekly, and Monthly financial summaries plus Outstanding Payments reports.</li>
+        <li>One-click CSV export formatted with UTF-8 BOM so Sinhala and English text open cleanly in Microsoft Excel.</li>
+      </ul>
+      <ul class="si">
+        <li>අද ඇණවුම්, ඉදිරි දින 7 බෙදාහැරීම්, මුළු ආදායම සහ හිඟ ගෙවීම් ක්ෂණිකව නිරීක්ෂණය කරන්න.</li>
+        <li>දෛනික, සතිපතා සහ මාසික වාර්තා සමඟ සිංහල අකුරු නිවැරදිව පෙනෙන Microsoft Excel CSV Export පහසුකම.</li>
+      </ul>
+    </article>
+
+    <!-- 6 -->
+    <article class="card tilt reveal">
+      <div class="card-icon"><i class="fas fa-database"></i></div>
+      <h3><span class="en tr">Built-In Backup, Restore &amp; Windows Reliability</span><span class="si">ආරක්ෂිත Backup සහ Restore පහසුකම</span></h3>
+      <ul class="en tr">
+        <li>Customer database is stored safely outside the program installation folder (<code>%LOCALAPPDATA%\BizManager\bizmanager.db</code>), preserving all business data during updates.</li>
+        <li>One-click local database backups and verified restore with automatic safety snapshots.</li>
+        <li>Runs locally on 127.0.0.1 using a single-instance Windows architecture with clean shutdown and zero duplicate background processes.</li>
+      </ul>
+      <ul class="si">
+        <li>මෘදුකාංගය Update කළද ඔබේ දත්ත සහ බැංකු රිසිට්පත් මැකී නොයන ලෙස වෙනම ආරක්ෂිතව ගබඩා වේ.</li>
+        <li>එක් ක්ලික් කිරීමකින් Database Backup සාදාගැනීමට සහ Restore කිරීමට හැකිය.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="sec-head reveal">
+    <div class="tag">// 3 SIMPLE STEPS</div>
+    <h2>How It <span class="grad">Works</span></h2>
+  </div>
+  <div class="timeline">
+    <div class="step reveal"><div class="num">01</div><h3>Add Your Products &amp; Stock</h3><p>Set up your products, prices, and starting stock quantities in minutes.</p></div>
+    <div class="step reveal"><div class="num">02</div><h3>Enter Orders &amp; Attach Slips</h3><p>Pick products, capture customer details (including 2nd phone &amp; sales channel), and upload the advance bank slip in one screen.</p></div>
+    <div class="step reveal"><div class="num">03</div><h3>Track Delivery &amp; Payments</h3><p>Update order status from Pending to Ready and Completed, collect remaining balances, and export Excel reports anytime.</p></div>
+  </div>
+</section>
+
+<!-- IDEAL FOR -->
+<section id="ideal">
+  <div class="sec-head reveal">
+    <div class="tag">// IDEAL FOR</div>
+    <h2>Built for <span class="grad">Small Businesses</span></h2>
+  </div>
+  <div class="ideal-grid">
+    <div class="ideal reveal"><i class="fas fa-share-nodes"></i><p>Facebook, Instagram, WhatsApp &amp; TikTok Online Stores</p></div>
+    <div class="ideal reveal"><i class="fas fa-shirt"></i><p>Clothing, Cosmetics, Gift &amp; Custom Craft Businesses</p></div>
+    <div class="ideal reveal"><i class="fas fa-cake-candles"></i><p>Cake Makers, Printing Shops &amp; Tailoring Studios</p></div>
+    <div class="ideal reveal"><i class="fas fa-screwdriver-wrench"></i><p>Electronics, Repair Centers &amp; Service Providers</p></div>
+    <div class="ideal reveal"><i class="fas fa-store"></i><p>Small Retail Shops &amp; Home-Based Entrepreneurs</p></div>
+  </div>
+</section>
+
+<!-- SPECS -->
+<section id="specs">
+  <div class="sec-head reveal">
+    <div class="tag">// TECHNICAL SPECIFICATIONS</div>
+    <h2>Tech <span class="grad">Specs</span></h2>
+  </div>
+  <dl class="specs reveal">
+    <div class="spec"><dt>Operating System</dt><dd>Windows 10 / Windows 11 (64-bit)</dd></div>
+    <div class="spec"><dt>Runtime Mode</dt><dd>100% Offline Local Server (127.0.0.1) via Default Browser</dd></div>
+    <div class="spec"><dt>Languages Supported</dt><dd>English &amp; සිංහල (Sinhala)</dd></div>
+    <div class="spec"><dt>Database Engine</dt><dd>SQLite (Transaction-safe, WAL mode, versioned migrations)</dd></div>
+    <div class="spec"><dt>Accepted Bank Slip Formats</dt><dd>PNG, JPG, JPEG, WEBP, PDF</dd></div>
+    <div class="spec"><dt>Report Exports</dt><dd>Microsoft Excel-compatible CSV (UTF-8 BOM)</dd></div>
+    <div class="spec"><dt>Installation</dt><dd>Standalone Windows Setup Installer (No extra runtime needed)</dd></div>
+  </dl>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="sec-head reveal">
+    <div class="tag">// FAQ</div>
+    <h2>Frequently Asked <span class="grad">Questions</span></h2>
+  </div>
+  <div class="faq reveal">
+    <details open>
+      <summary>Do I need an internet connection to use BizManager?</summary>
+      <p>No. BizManager works 100% offline on your Windows computer.</p>
+    </details>
+    <details>
+      <summary>Will I lose my data when updating the software?</summary>
+      <p>No. Your database, backups, and uploaded bank slips are stored safely outside the application installation folder.</p>
+    </details>
+    <details>
+      <summary>Can my staff use it in Sinhala?</summary>
+      <p>Yes. You can switch the entire interface between English and Sinhala anytime, and exported Excel reports display Sinhala text properly.</p>
+    </details>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact">
+  <div class="cta-panel reveal">
+    <h2>
+      <span class="en tr">Ready to Organize Your Orders &amp; Stock?</span>
+      <span class="si">අදම ඔබේ ව්‍යාපාරයේ ඇණවුම් සහ තොග ක්‍රමවත් කරගන්න!</span>
+    </h2>
+    <p>
+      <span class="en tr">Upgrade from messy notebooks and spreadsheets to BizManager today.</span>
+      <span class="si">පොත්වල ලිවීම සහ ගණන් වැරදීම් නවතා BizManager වෙත මාරු වන්න.</span>
+    </p>
+    <a href="https://wa.me/94720123910?text=Hi%20LuckZero%2C%20please%20send%20BizManager%20installation%20and%20pricing%20details." target="_blank" rel="noopener" class="btn btn-primary magnetic">
+      <span><i class="fab fa-whatsapp"></i> <span class="en tr">Contact Us for Installation &amp; Pricing</span><span class="si">වැඩි විස්තර සහ මිල ගණන් සඳහා අප අමතන්න</span></span>
+    </a>
+    <div class="cta-phone"><i class="fas fa-phone"></i> <a href="tel:+94720123910">072 012 3910</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot">
+    <a href="index.html" class="brand"><img src="image/logo.png" alt="LuckZero" width="42" height="42"><span>LUCK<b>ZERO</b></span></a>
+    <p class="tagline">Driven by logic, not luck.</p>
+    <p class="copy">BizManager is a LuckZero product. &copy; <span id="year"></span> LuckZero. All rights reserved.</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top">
+  <svg viewBox="0 0 48 48"><circle class="bg" cx="24" cy="24" r="21"/><circle class="fg" id="toTopRing" cx="24" cy="24" r="21"/></svg>
+  <i class="fas fa-arrow-up"></i>
+</button>
+<div class="toast" id="toast"></div>
+
+<script src="js/main.js" defer></script>
+<script src="js/bizmanager.js" defer></script>
+</body>
+</html>
